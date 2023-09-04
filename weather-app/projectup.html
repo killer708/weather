@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/projectup.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="curved-shape"></div>
+        <div class="curved-shape2"></div>
+        <div class="form-box login">
+            <h2 class="animation" style="--D:0; --s:21">Login</h2>
+            <form name="loginForm" action="#">
+                <div class="input-box animation" style="--D:1; --s:22">
+                    <input type="text" id="loginUsername" required>
+                    <label for="loginUsername">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--D:2; --s:23">
+                    <input type="password" id="loginPassword" required>
+                    <label for="loginPassword">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box animation" style="--D:3; --s:24">
+                    <!-- Update the button to include the redirection -->
+                    <button class="btn" type="button" onclick="validateLoginForm()">Login</button>
+                </div>
+                <div class="regi-link animation" style="--D:4; --s:25">
+                    <p>Don't have an account? <a href="#" class="SignUplink">Sign up</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-content login">
+            <h2 class="animation" style="--D:0; --s:20"> WELCOME BACK!</h2>
+            <p class="animation" style="--D:1; --s:21">The weather today is bright and sunny. It's a perfect day to enjoy outdoor activities or simply relax in the pleasant conditions.</p>
+        </div>
+        <div class="form-box Register">
+            <h2 class="animation" style="--li:17; --s:0;">Register</h2>
+            <form name="registerForm" action="#">
+                <div class="input-box animation" style="--li:18; --s:1;">
+                    <input type="text" id="registerUsername" required>
+                    <label for="registerUsername">Username</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--li:18; --s:1;">
+                    <input type="email" id="registerEmail" required>
+                    <label for="registerEmail">Email</label>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box animation" style="--li:19; --s:2;">
+                    <input type="password" id="registerPassword" required>
+                    <label for="registerPassword">Password</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box animation" style="--li:20; --s:3;">
+                    <!-- Update the button to include the registration validation -->
+                    <button class="btn" type="button" onclick="validateRegisterForm()">Register</button>
+                </div>
+                <div class="regi-link animation" style="--li:21; --s:4;">
+                    <p>Already have an account? <a href="#" class="SignInlink">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="info-content Register">
+            <h2 class="animation" style="--li:17; --s:0;"> WELCOME BACK!</h2>
+            <p class="animation" style="--li:18; --s:1;">The weather today is bright and sunny. It's a perfect day to enjoy outdoor activities or simply relax in the pleasant conditions.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript function to redirect to "weather.html" -->
+    <script>
+        function redirectToWeatherPage() {
+            window.location.href = "weather.html";
+        }
+
+        function validateLoginForm() {
+            const username = document.getElementById("loginUsername").value.trim();
+            const password = document.getElementById("loginPassword").value.trim();
+
+            if (username === "" || password === "") {
+                alert("Please fill in all fields.");
+            } else {
+                // Fields are filled, proceed with form submission or other actions
+                redirectToWeatherPage();
+            }
+        }
+        
+
+        function validateRegisterForm() {
+            const username = document.getElementById("registerUsername").value.trim();
+            const email = document.getElementById("registerEmail").value.trim();
+            const password = document.getElementById("registerPassword").value.trim();
+
+            if (username === "" || email === "" || password === "") {
+                alert("Please fill in all fields.");
+            } else {
+                redirectToWeatherPage();
+            }
+        }
+        
+    </script>
+
+    <script src="projectup.js"></script>
+</body>
+</html>
+
